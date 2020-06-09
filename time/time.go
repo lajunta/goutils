@@ -4,10 +4,6 @@ import (
 	"time"
 )
 
-// PageNum caculate the page number
-func PageNum(page int64, num int) int64 {
-	return (page-1)*10 + 1 + int64(num)
-}
 
 // ToDate return just data
 func ToDate(tm time.Time) string {

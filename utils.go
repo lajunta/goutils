@@ -1,6 +1,10 @@
 package goutils
 
-import "reflect"
+import (
+	"reflect"
+
+	"go.mongodb.org/mongo-driver/bson/primitive"
+)
 
 // Contains check a item in a slice
 func Contains(array interface{}, val interface{}) (index int) {
@@ -36,4 +40,14 @@ func Values(myMap map[string][]string) [][]string {
 		keys = append(keys, v)
 	}
 	return keys
+}
+
+// PageNum caculate the page number
+func PageNum(page int64, num int) int64 {
+	return (page-1)*10 + 1 + int64(num)
+}
+
+// Hex convert objectID to string
+func Hex(id primitive.ObjectID) string {
+	return id.Hex()
 }
